@@ -1,0 +1,22 @@
+---
+ nome: "John Xina, lider supremo da Republica Popular de Lacostia"
+ idade: -69
+ nota_no_ENEM: 54.6543
+ casado: true
+ filhos:
+   - "Nego Ney"
+   - "Tom o gato"
+   - "Shaggy nivel 4"
+   - "Calouro Supremo"
+ pais:
+   nome: "Republica Popular de Lacostia"
+   fundacao: 1964
+   governo: ditadura democratica
+   em_crise: false
+   estados:
+     - "URSS"
+     - "Banania"
+     - "Terra do Pratos"
+   IDH: 0.76
+   estado: guerra
+ lema: "Receba garai"
