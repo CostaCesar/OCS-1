@@ -2,6 +2,12 @@
  nome: "John Xina, lider supremo da Republica Popular de Lacostia"
  idade: -69
  nota_no_ENEM: 54.6543
+ usa_remedio: true
+ remedios_usados:
+   - "Dipirona"
+   - "Ducolax"
+   - "Estomazil"
+   - "Cloroquina" 
  casado: true
  filhos:
    - "Nego Ney"
