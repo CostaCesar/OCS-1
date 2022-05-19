@@ -1,10 +1,10 @@
 #!/bin/bash
-CON=21
+CON=20
 
 DEN=0
 FAC=1
 X=0
-TWO=2
+HLD=0
 for A in $(seq 0 $CON)
 do
     DEN=$(($DEN+2**$A))
@@ -19,12 +19,13 @@ do
     RES=$(($A%2))
     #X=$(echo "scale=4;($FAC/$DEN)" | bc -l)
     #echo "$FAC / $DEN = $X"
-    if [ $RES -eq 1 ]
+    HLD=$(echo "($FAC/$DEN)" | bc -l)
+    if [ $RES -eq 0 ]
     then
-        X=$(echo "scale=5;($FAC/$DEN)+$X" | bc -l)
+        X=$(echo "($X+$HLD)" | bc -l)
     else
-        X=$(echo "scale=5;($FAC/$DEN)-$X" | bc -l)
+        X=$(echo "($X-$HLD)" | bc -l)
     fi
-    #echo "$A Ciclo = $X"
+    echo "$A Ciclo = $X"
 done
 echo "$X"
