@@ -1,5 +1,5 @@
 #!/bin/bash
-CON=20
+CON=51
 
 DEN=0
 FAC=1
@@ -10,22 +10,10 @@ do
     DEN=$(($DEN+2**$A))
     B=$(($A+1))
     
-    FAC=1
-    for C in $(seq 1 $B)
-    do
-        FAC=$(($FAC*$C))
-    done
+    FAC=$(echo "(($A+1)*$FAC)" | bc -l)
+    RES=$((-1**$A))
 
-    RES=$(($A%2))
-    #X=$(echo "scale=4;($FAC/$DEN)" | bc -l)
-    #echo "$FAC / $DEN = $X"
-    HLD=$(echo "($FAC/$DEN)" | bc -l)
-    if [ $RES -eq 0 ]
-    then
-        X=$(echo "($X+$HLD)" | bc -l)
-    else
-        X=$(echo "($X-$HLD)" | bc -l)
-    fi
-    echo "$A Ciclo = $X"
+    HLD=$(echo "($FAC/$DEN)*$RES" | bc -l)
+    X=$(echo "($X+$HLD)" | bc -l)
+    echo "$A Ciclo = $FAC / $DEN * ($RES) += $X"
 done
-echo "$X"
