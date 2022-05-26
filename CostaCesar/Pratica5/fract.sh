@@ -8,7 +8,6 @@ HLD=0
 for A in $(seq 0 $CON)
 do
     DEN=$(($DEN+2**$A))
-    B=$(($A+1))
     
     FAC=$(echo "(($A+1)*$FAC)" | bc -l)
     RES=$((-1**$A))
